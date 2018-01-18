@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    function clickSwitch() {
+
+  'use strict';
+
+  var isA = 0;  
+  var btnA = document.getElementById('a');
+
+  var btnB = document.getElementById('b');
+
+  var divA = document.getElementById('divA');
+
+  var divB = document.getElementById('divB');
+
+ 
+
+  function setState(isA) {
+
+    btnA.className = (isA == 0) ? 'btn inactive' : 'btn';  
+    divA.className = (isA == 0) ? 'boxDisplay' : 'boxNone';  
+    btnB.className = (isA == 1) ? 'btn inactive' : 'btn';  
+    divB.className = (isA == 1) ? 'boxDisplay' : 'boxNone';  
+  }
+
+  setState(0);
+
+ 
+
+  btnA.addEventListener('click', function(){
+
+    if (isA == 0) return;
+
+    isA = 0;
+
+    setState(0);
+
+  });
+
+  btnB.addEventListener('click', function(){
+
+    if (isA == 1) return;
+
+    isA = 1;
+
+    setState(1);
+
+  });
+
+};
+
+document.addEventListener("DOMContentLoaded", clickSwitch, false);
+  </script>
+</head>
+<body>
+	<br />
+    <FORM NAME="mailer" METHOD="post" ACTION="" ENCTYPE="text/plain" OnSubmit="(document.mailer.action += contents)">
+<TABLE>
+
+<TR VALIGN="top">
+<TD>TO
+
+<TD>
+<SELECT NAME="who" OnChange="WriteMail(this.form)">
+<OPTION VALUE="">↓SELECT
+<OPTION VALUE="chikuda@tamacc.chuo-u.ac.jp">chikuda@tamacc.chuo-u.ac.jp
+<OPTION VALUE="toru@tamacc.chuo-u.ac.jp">toru@tamacc.chuo-u.ac.jp
+</SELECT>
+</TD>
+</TR>
+
+
+<TD>
+<TR VALIGN="top">
+<TD>FROM</TD>
+<TD><INPUT TYPE="text" SIZE=40 NAME="name" OnChange="WriteMail(this.form)"></TD>
+</TR>
+
+
+
+<TD>YOUR ADRESS</TD>
+<TD>
+<SELECT NAME="who" OnChange="WriteMail(this.form)"><INPUT TYPE="text" SIZE=40 NAME="email" OnChange="WriteMail(this.form)"></TD>
+
+</TR>
+
+<TR VALIGN="top">
+<TD>TITLE</TD>
+<TD><INPUT TYPE="text" NAME="sbj" OnChange="WriteMail(this.form)"></TD>
+</TR>
+<TD>
+<TD
+
+
+
+
+<TD>
+<TD>
+<TR VALIGN="top">
+<TD>TEXT</TD>
+<TD>
+<TEXTAREA NAME="message" COLS=30 ROWS=25WRAP="virtual" OnChange="WriteMail(this.form)">
+</TEXTAREA>
+</TD>
+</TR>
+
+<TD>
+<TR>
+<TD></TD>
+<TD>
+<INPUT TYPE="submit"　 VALUE="SEND">
+<INPUT TYPE="reset" VALUE="CANCEL">
+</TD>
+</TR>
+
+
+</body>
+</html>
